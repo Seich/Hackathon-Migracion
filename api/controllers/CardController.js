@@ -18,43 +18,6 @@
 module.exports = {
     
   
-  /**
-   * Action blueprints:
-   *    `/card/create`
-   */
-   create: function (req, res) {
-    
-    // Send a JSON response
-    return res.view('Card/Create',{});
-  },
-
-
-  /**
-   * Action blueprints:
-   *    `/card/update`
-   */
-   update: function (req, res) {
-    
-    // Send a JSON response
-    return res.json({
-      hello: 'world'
-    });
-  },
-
-
-  /**
-   * Action blueprints:
-   *    `/card/destroy`
-   */
-   destroy: function (req, res) {
-    
-    // Send a JSON response
-    return res.json({
-      hello: 'world'
-    });
-  },
-
-
 
 
   /**
