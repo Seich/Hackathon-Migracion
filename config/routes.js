@@ -45,6 +45,7 @@ module.exports.routes = {
     controller: 'Signup',
     action: 'showForm'
   }
+
   /*
 
   // Let's say you're building an email client, like Gmail
