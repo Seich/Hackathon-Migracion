@@ -25,9 +25,7 @@ module.exports = {
    create: function (req, res) {
     
     // Send a JSON response
-    return res.json({
-      hello: 'world'
-    });
+    return res.view('Card/Create',{});
   },
 
 
