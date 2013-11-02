@@ -9,10 +9,35 @@
 module.exports = {
 
   attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
+  	firstName: {
+  		type: 'string',
+  		maxLength: 40,
+  		minLength: 5
+  	},
+  	lastName: {
+  		type: 'string',
+  		maxLength: 40,
+  		minLength: 5
+  	},
+  	emailAddress: {
+  		type: 'email',
+  		required: true
+  	},
+  	username: {
+  		type: 'string',
+  		required: true
+  	},
+  	password_hash: {
+  		type: 'string',
+  		required: true
+  	},
+  	birthDate: {
+  		type: 'date'
+  	},
+  	phoneNumber: {
+  		type: 'integer'
+  	}
+
     
   }
 
