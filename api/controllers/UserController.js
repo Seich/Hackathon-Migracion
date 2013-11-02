@@ -16,8 +16,16 @@
  */
 
 module.exports = {
-    
-  
+    create: function(req, res){
+    	//console.log(req);
+    	new User({firstName: req.body.firstName}, function(err, model){
+    		res.send(model);
+    	});
+    },
+	
+	render: function(req, res){
+		res.view('user/signup', {});
+	},
 
 
   /**
