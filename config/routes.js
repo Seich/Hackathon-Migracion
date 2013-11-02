@@ -34,15 +34,18 @@ module.exports.routes = {
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': {
     view: 'home/index'
-  }
+  },
+
+
 
   /*
   // But what if you want your home page to display
-  // a signup form located at `views/user/signup.ejs`?
-  '/': {
-    view: 'user/signup'
+  // a signup form located at `views/user/signup.ejs`? */
+  '/signup': {
+    controller: 'Signup',
+    action: 'showForm'
   }
-
+  /*
 
   // Let's say you're building an email client, like Gmail
   // You might want your home route to serve an interface using custom logic.
