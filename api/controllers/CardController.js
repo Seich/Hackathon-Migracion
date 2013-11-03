@@ -35,16 +35,19 @@ module.exports = {
 	},
 
 	reload: function(req, res){
-		User.findOne({id: req.session.User.id}, function(err,user) {
-			console.log(user.id);
-				var amount = req.param('amount');
-				user.balance += amount;
-				console.log(amount);
-				console.log(user.balance)
-				user.save(function(errr) {
-					req.session.User = user;
-				});
-			
+		var am = parseFloat(req.param('amount')) + parseFloat(req.session.User.balance); 
+		User.update({
+			id: req.session.User.id
+		},{
+			balance : am
+		}, function(err,users) {
+			if(err){
+				req.session.flash = { err:err }
+				res.redirect('/dashboard/load');
+			} else {
+				req.session.User = users[0];
+				res.redirect('/dashboard');
+			}
 		});
 
 		
