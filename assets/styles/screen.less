@@ -230,6 +230,58 @@ form {
 	}
 }
 
+.cards {
+	li {
+		background: #FFF;
+		padding: 1em;
+		list-style: none;
+		position: relative;
+		border: 1px solid #EEE;
+		cursor: pointer;
+
+		label {
+			font-weight: 300;
+			font-size: 0.7em;			
+		}
+
+		p {
+			margin-top: 0;
+		}
+
+		div {
+			display: inline-block;
+			width: 15%;
+
+			&.large {
+				width: 40%;
+			}
+		}
+
+		input[type="text"] {
+			padding: 0.5em;
+			font-size: 0.8em;
+		}
+
+		a.delete {
+			background: @red;
+			bottom: 0;
+			color: #FFF;
+			font-size: 60px;
+			line-height: 1.5;
+			position: absolute;
+			right: 0;
+			text-align: center;
+			top: 0;
+			cursor: pointer;
+			width: 75px;
+
+			&:hover {
+				background: lighten(@red, 10%);
+			}
+		}
+	}
+}
+
 .form-slim {
 	margin: 0 auto;
 	width: 30%;
@@ -324,6 +376,11 @@ form {
 	&.btn-red {
 		background: @red;
 		border-bottom: 3px solid darken(@red, 10%);
+	}
+	
+	&.btn-green {
+		background: @green;
+		border-bottom: 3px solid darken(@green, 10%);
 	}
 
 	&:hover {

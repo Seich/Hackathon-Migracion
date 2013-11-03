@@ -1,22 +1,47 @@
+<ul class="cards">
 <% _.each(cards, function (el){ %>
- <a href=""><div>
- 	
-	<h1><%= el.owner_name %></h1>
-	<h3>Fecha de expiración: <%=el.expiration_date_month%>-<%=el.expiration_date_year%></h3>
-	<h3>Número de la tarjeta: <%=el.card_number%></h3>
-	<h3>Dirección de Facturación</h3>
-	<p>
-		<%= el.billing_street%>, 
-		<%= el.billing_city%>, 
-		<%= el.billing_province%>, 
-		<%= el.billing_country%>.
-	</p>
-	<p>
-		Código Postal:<%= el.postal_code%>
-	</p>
-	<p>
-		Teléfono:<%= el.phone_number%>
-	</p>
- </div></a>
+<li>
+	<div>
+		<label>Número de la tarjeta:</label> 
+		<p><%=el.card_number%></p>
+	</div>
+
+	<div>
+		<label>Nombre:</label>
+		<p><%= el.owner_name %></p>
+	</div>
+
+	<div>
+		<label>Fecha de expiración:</label> 
+		<p><%=el.expiration_date_month%>/<%=el.expiration_date_year%></p>
+	</div>
+
+	<div class="large">
+		<input type="text" placeholder="Cantidad">
+		<a href="#" class="btn btn-green">Cargar</a>
+	</div>
+
+	<a class="delete">
+		&times;
+	</a>
+
+	<div class="additional" style="display: none">
+		<h2>Dirección de Facturación</h2>
+		<p>
+			<%= el.billing_street%>,
+			<%= el.billing_city%>,
+			<%= el.billing_province%>,
+			<%= el.billing_country%>.
+		</p>
+
+		<label>Código Postal:</label>
+		<p><%= el.postal_code%></p>
+		
+		<label>Teléfono:</label>
+		<p><%= el.phone_number%></p>
+	</div>
+ </li>
 <% }); %>
+</ul>
+
 <a href="/card/newcard" class="btn">Nueva tarjeta</a>
