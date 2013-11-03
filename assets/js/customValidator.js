@@ -33,7 +33,7 @@ $(document).ready(function(){
 		    }
 		},
 		success: function(element) {
-			element.addClass('valid')
+			element.addClass('valid');
 		}
 	});
 
@@ -67,7 +67,25 @@ $(document).ready(function(){
 		    }
 		},
 		success: function(element) {
-			element.addClass('valid')
+			element.addClass('valid');
+		}
+	});
+
+	$('.form-reload').validate({
+		rules: {
+			amount: {
+				required: true,
+				number:true
+			}
+		},
+		messages: {
+			amount: {
+				required: "Debe ingresar un monto.",
+				number: "Debe ingresar un valor decimal."
+			}
+		},
+		success: function(element) {
+			element.addClass('valid');
 		}
 	});
 });

@@ -54,7 +54,7 @@
 			$new_deposit_button.show();
 			$new_deposit_button.on('click',function(){
 				$new_banks_list.show().empty();
-				$.each(banks, function(i, bank){
+				$.each(banks, function(i,bank){
 					bank.index = i;
 					$new_banks_list.append(new EJS({url: '/views/new_remittance_bank.ejs'}).render(bank));
 				});
@@ -84,3 +84,16 @@
  	});
 
  });
+/*
+$(document).ready(function() {
+	$('form-reload').click(function() {
+		var amount = $('reload-amount').val();
+		$.post('/card/reload' , {amount: amount},
+			function() {
+				$('reload-amount').val('');
+			}).fail(function(res){
+				$('reload-amount').val('0');
+			});
+	});
+});
+	*/
