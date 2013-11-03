@@ -2,7 +2,7 @@
 	<h2 class="form-signin-heading">Please sign in...</h2>
 	<% if(flash && flash.err){%>
 		<ul>
-			<% Object.keys(flash.err).forEach(function(error){)%>
+			<% Object.keys(flash.err).forEach(function(error){%>
 				<li><%- JSON.stringify(flash.err[error])%></li>
 			<%})%>
 		</ul>

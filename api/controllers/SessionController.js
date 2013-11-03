@@ -21,7 +21,39 @@ module.exports = {
 		res.view('session/new');
 	},
 
+	create: function(req, res, next){
+		if(!req.param('email') || !req.param('password')){
+			var usernamePasswordRequiredError = [{name: 'usernamePasswordRequired', message:'Ingrese correo y contraseña.'}];
 
+			req.session.flash={
+				err: usernamePasswordRequiredError
+			}
+			res.redirect('/session/new');
+			return;
+		}
+
+		User.findOneByEmail(req.param('email')).done(function(err, user){
+			if(err) return next(err);
+			if(!user){
+				var noAccountError=[{name:'noAccount', message:'La dirección de correo no fue encontrada.'}];
+				req.session.flash={
+					err: noAccountError
+				}
+				res.redirect('/session/new');
+				return;
+			}
+			//hacer comparacion con md5
+			if(req.param('password') != user.password_hash){
+				var passwordError=[{name:'passwordError', message:'La contraseña es inválida.'}];
+				req.session.flash={
+					err: passwordError
+				}
+				res.redirect('/session/new');
+				return;
+			}
+
+		});
+	},
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to SessionController)
