@@ -1,9 +1,10 @@
 <li data-id="<%= index %>">
 	<img src="/images/logos/<%= logo %>">
-	<h3><%= name %></h3>
-	<input type="text" name="banks[<%= index %>][account]">
-	<input type="hidden" name="banks[<%= index %>][bank]" value="<%= id %>">
-	<label>No. de Cuenta</label>
-	<input type="text" />
-	<button>Save</button>
+	<div>
+		<h3><%= name %></h3>
+		<input type="text" name="banks[<%= index %>][account]" placeholder="Total a Depositar">
+		<input type="hidden" name="banks[<%= index %>][bank]" value="<%= id %>">
+		<input type="text" name="banks[<%= index %>][amount]" />
+		<button>Save</button>
+	</div>
 </li>
