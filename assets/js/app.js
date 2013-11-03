@@ -48,7 +48,7 @@
 			$new_deposit_button.show();
 			$new_deposit_button.on('click',function(){
 				$new_banks_list.show().empty();
-				$.each(banks, function(i,bank){
+				$.each(banks, function(i, bank){
 					bank.index = i;
 					$new_banks_list.append(new EJS({url: '/views/new_remittance_bank.ejs'}).render(bank));
 				});
