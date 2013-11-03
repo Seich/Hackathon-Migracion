@@ -1,7 +1,4 @@
-<% $.each(this, function(i, service) { %>
-<li>
-	<img src="/images/logos/<%= service.logo %>">
-	<h3><%= service.company %></h3>
-	<p>Total: <%= 12.5 %></p>
+<li data-id="<%= index %>">
+	<img src="/images/logos/<%= logo %>">
+	<h3><%= company %></h3>
 </li>
-<% }) %>
