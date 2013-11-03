@@ -1,8 +1,7 @@
 <script>
-if(session.authenticated){
+if(typeof session != undefined && session.authenticated){
 	location.assign('/dashboard');
 } else {
 	location.assign('/home');
 }
-    
 </script>
