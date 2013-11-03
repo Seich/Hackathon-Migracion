@@ -65,4 +65,16 @@
 			
 		});
 	});
+ 	$('footer input')[0].on('click', function(event){
+ 		event.preventDefault();
+ 		var quantity = $('input#quantity').val();
+ 		var amount = 0; // sumatoria de todo lo que hay por pagar
+
+ 		if(quantity < amount ){
+ 			alert('La cantidad ingresada es menor que el total a pagar.');
+ 			return;
+ 		}
+ 		$('form').submit();
+ 	});
+
  });
