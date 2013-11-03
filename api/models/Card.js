@@ -12,8 +12,8 @@ module.exports = {
 
   	user_id: 'INTEGER',
   	owner_name: 'STRING',
-  	expiration_date_month: 'DATE',
-  	expiration_date_year: 'DATE',
+  	expiration_date_month: 'STRING',
+  	expiration_date_year: 'STRING',
   	card_number: 'STRING',
   	card_security_code: 'STRING',
   	billing_country: 'STRING',

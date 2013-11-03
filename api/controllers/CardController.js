@@ -22,6 +22,7 @@ module.exports = {
    	card.user_id = req.session.User.id;
    	Card.create(card, function (err, card){
     		if(err){
+    			console.log(err);
     			req.session.flash ={err:err}
     			return res.redirect('/card/newcard');
     		}
