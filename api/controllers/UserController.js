@@ -35,6 +35,7 @@ module.exports = {
         var passwordHash = require('password-hash');
         var hashedPassword = passwordHash.generate(user.password_hash);
         user.password_hash = hashedPassword;
+        user.balance = 0.0;
     	User.create(user, function userCreated(err, user){
     		if(err){
     			req.session.flash ={err:err}

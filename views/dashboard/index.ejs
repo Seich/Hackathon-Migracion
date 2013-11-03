@@ -1,7 +1,7 @@
 <header class="dashboard">
 	<h2>Hola, <b><%= session.User.firstName + " " + session.User.lastName %></b>! Bienvenido a Remesa.me!</h2>
 	<p>
-		Balance: <strong>$ <%= currentBalance %></strong>
+		Balance: <strong>$ <%= session.User.balance %></strong>
 		<a href="/dashboard/load" class="btn btn-left">Recarga ahora!</a><a href="/remittance/new" class="btn btn-right btn-red">Enviar Recarga</a>
 	</p>
 </header>
