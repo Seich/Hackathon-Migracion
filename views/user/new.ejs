@@ -1,0 +1,49 @@
+<h1>Sign Up form</h1>
+
+<form class='form-signup' action="/user/create" method="post">
+<% if(flash && flash.err){ %>
+<ul>
+<% Object.keys(flash.err).forEach(function(error){%>
+<li> <%= JSON.stringify(flash.err[error])%></li>
+<%})%>
+</ul>
+<%}%>
+<div>
+<label>First Name:</label>
+<input type="text" name="firstName"/><br/>
+</div>
+<div>
+<label>Last Name:</label>
+<input type="text" name="lastName"/><br/>
+</div>
+<div>
+<label>Email:</label>
+<input type="text" name="emailAddress"/><br/>
+</div>
+<div>
+<label>Username:</label>
+<input type="text" name="username"/><br/>
+</div>
+<div>
+<label>Password:</label>
+<input type="password" name="password_hash"/><br/>
+</div>
+<div>
+<label>Confirm Password:</label>
+<input type="password" name="password_hash_confirmation"/><br/>
+</div>
+<div>
+<label>Birthdate:</label>
+<input type="date" name="birthDate"/><br/>
+</div>
+<div>
+<label>Phone number:</label>
+<input type="text" name="phoneNumber"/><br/>
+</div>
+<div>
+</div>
+
+
+<input type="submit" value="Submit"/>
+<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>

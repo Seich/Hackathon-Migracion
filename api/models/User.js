@@ -13,21 +13,22 @@ module.exports = {
   attributes: {
   	firstName: {
   		type: 'string',
-  		maxLength: 40,
-  		minLength: 5
+  		maxLength: 40
   	},
   	lastName: {
   		type: 'string',
-  		maxLength: 40,
-  		minLength: 5
+  		maxLength: 40
   	},
   	emailAddress: {
-  		type: 'email',
-  		required: true
+  		type: 'string',
+      email:true,
+  		required: true,
+      unique: true
   	},
   	username: {
   		type: 'string',
-  		required: true
+  		required: true,
+      unique: true
   	},
   	password_hash: {
   		type: 'string',
@@ -37,8 +38,13 @@ module.exports = {
   		type: 'date'
   	},
   	phoneNumber: {
-  		type: 'integer'
-  	}
+  		type: 'string'
+  	},
+    toJSON: function(){
+      var obj = this.toObject();
+      delete obj.password_hash;
+      return obj;
+    }
 
     
   }
