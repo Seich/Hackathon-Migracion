@@ -21,7 +21,7 @@ module.exports = {
 			type: 'INTEGER'
 		},
 
-		contract: {
+		account: {
 			type: 'STRING'
 		}
 	  
