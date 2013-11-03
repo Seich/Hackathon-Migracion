@@ -1,5 +1,5 @@
 /**
- * UserController
+ * CardController
  *
  * @module      :: Controller
  * @description	:: A set of functions called `actions`.
@@ -16,21 +16,13 @@
  */
 
 module.exports = {
-    create: function(req, res){
-    	//console.log(req);
-    	new User({firstName: req.body.firstName}, function(err, model){
-    		res.send(model);
-    	});
-    },
-	
-	render: function(req, res){
-		res.view('user/signup', {});
-	},
+    
+  
 
 
   /**
    * Overrides for the settings in `config/controllers.js`
-   * (specific to UserController)
+   * (specific to CardController)
    */
   _config: {}
 
