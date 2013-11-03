@@ -42,12 +42,17 @@ module.exports = {
 
     			return res.redirect('/user/new');
     		}
-    		res.redirect('/user/show/'+user.id)
+            req.session.authenticated = true;
+            req.session.User = user;
+    		res.redirect('/user/show')
     	});
     	
     },
+    edit: function(req, res, next){
+        console.log(req.params["id"]);
+    },
     show: function(req, res, next) {
-    	User.findOne(req.param('id'),function(err, user) {
+    	User.findOne(req.session.User.id,function(err, user) {
     		if(err) return next(err);
     		if(!user) return next();
     		res.view({
