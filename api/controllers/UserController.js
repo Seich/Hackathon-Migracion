@@ -16,17 +16,23 @@
  */
 
 module.exports = {
-    create: function(req, res){
-    	//console.log(req);
-    	new User({firstName: req.body.firstName}, function(err, model){
-    		res.send(model);
-    	});
+    'new': function(req, res){
+    	res.view();
+    	
     },
-	
-	render: function(req, res){
-		res.view('user/signup', {});
-	},
+    create: function(req, res, next){
+    	//console.log(req);
 
+    	User.create(req.params.all(), function userCreated(err, user){
+    		if(err){
+    			req.session.flash ={err:err}
+
+    			return res.redirect('/user/new');
+    		}
+    		res.json(user);
+    	});
+    	
+    },
 
   /**
    * Overrides for the settings in `config/controllers.js`
