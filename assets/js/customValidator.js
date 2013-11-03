@@ -14,7 +14,7 @@ $(document).ready(function(){
 		  	username: {
 		  		required: true
 		  	},
-		  	password_hash: {
+		  	password: {
 		  		required: true,
 		  		minlength: 6
 		  	},
@@ -22,7 +22,7 @@ $(document).ready(function(){
 		  		required: true
 		  	},
 		  	password_hash_confirmation: {
-		  		equalTo: "#password_hash",
+		  		equalTo: "#password",
 		  		minlength: 6
 		  	}	
 		},
