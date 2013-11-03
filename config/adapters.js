@@ -16,6 +16,7 @@ module.exports.adapters = {
 	'default': 'postgres',
 
 	postgres: {
+		module: 'sails-postgresql',
 		host: 'localhost',
 		user: 'root',
 		password: 'root',
