@@ -29,9 +29,18 @@ module.exports = {
 
     			return res.redirect('/user/new');
     		}
-    		res.json(user);
+    		res.redirect('/user/show/'+user.id)
     	});
     	
+    },
+    show: function(req, res, next) {
+    	User.findOne(req.param('id'),function(err, user) {
+    		if(err) return next(err);
+    		if(!user) return next();
+    		res.view({
+    			user: user
+    		});
+    	})
     },
 
   /**

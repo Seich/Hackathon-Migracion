@@ -7,22 +7,27 @@
  */
 
 module.exports = {
+	schema: true,
 
-  attributes: {
-	
-	company: {
-		type: 'STRING'
-	},
-	
-	//TODO: This should be moved to a different table.
-	country: {
-		type: 'STRING'
-	},
+	attributes: {
 
-	name: {
-		type: 'STRING'
+		company: {
+			type: 'STRING'
+		},
+
+		//TODO: This should be moved to a different table.
+		country: {
+			type: 'STRING'
+		},
+
+		name: {
+			type: 'STRING'
+		},
+
+		logo: {
+			type: 'STRING'
+		}
+
 	}
-	
-  }
 
 };
