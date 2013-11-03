@@ -1,6 +1,5 @@
-<% _.each(cards, function (el){
- %>
- <div>
+<% _.each(cards, function (el){ %>
+ <a href=""><div>
  	
 	<h1><%= el.owner_name %></h1>
 	<h3>Fecha de expiración: <%=el.expiration_date_month%>-<%=el.expiration_date_year%></h3>
@@ -18,6 +17,6 @@
 	<p>
 		Teléfono:<%= el.phone_number%>
 	</p>
- </div>
+ </div></a>
 <% }); %>
-<button src="/card/newcard">Agregar nueva tarjeta</button>
+<a href="/card/newcard" class="btn">Nueva tarjeta</a>
