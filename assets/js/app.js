@@ -29,13 +29,19 @@
 			$('.current_services').on('click', 'button', function(event){
 
 				event.preventDefault();
-				var quantity = Math.floor((Math.random()*10000)+1);
+				var quantity = Math.floor((Math.random()*100)+1);
+				
 				var $accoutInput = $($(this).parent('div:first').find('input:first')[0]);
 				//var $amountInput = $($(this).parent('div:first').find('input:last')[0]);
 				if($accoutInput.val().length < 1){
 					return;
 				}
 				$accoutInput.attr('readonly', true);
+				var total = parseFloat($($('span.total')[0]).text());
+				
+				total += parseFloat(quantity);
+				$($('span.total')[0]).text(total);
+
 				//$amountInput.attr('value', quantity).attr('type','text').attr('readonly',true);
 			});
 
@@ -65,10 +71,10 @@
 			
 		});
 	});
- 	$('footer input')[0].on('click', function(event){
+ 	$($('footer input')[0]).on('click', function(event){
  		event.preventDefault();
- 		var quantity = $('input#quantity').val();
- 		var amount = 0; // sumatoria de todo lo que hay por pagar
+ 		var quantity = parseFloat($('input#quantity').val());
+ 		var amount = parseFloat($($('span.total')[0]).text());
 
  		if(quantity < amount ){
  			alert('La cantidad ingresada es menor que el total a pagar.');
