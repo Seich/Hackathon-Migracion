@@ -1,3 +1,8 @@
 <script>
-    location.assign('/dashboard');
+if(session.authenticated){
+	location.assign('/dashboard');
+} else {
+	location.assign('/home');
+}
+    
 </script>
