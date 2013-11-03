@@ -48,6 +48,5 @@
 				$new_banks_list.hide();
 			});
 		});
-
 	});
  });

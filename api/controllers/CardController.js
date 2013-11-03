@@ -17,6 +17,18 @@
 
 module.exports = {
     
+   create: function(req, res){
+   	var card = req.params.all();
+   	card.user_id = req.session.User.id;
+   	Card.create(card, function (err, card){
+    		if(err){
+    			req.session.flash ={err:err}
+    			return res.redirect('/user/new');
+    		}
+    		res.redirect('/user/show');
+    	});
+   },
+
   newcard: function(req, res){
 	res.view('card/new',{});
   },
