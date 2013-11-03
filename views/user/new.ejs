@@ -1,42 +1,39 @@
-<h1>Sign Up form</h1>
+<div class="form-signup form-slim">
+	<h2>Crear Nueva Cuenta</h2>
 
-<form class='form-signup' action="/user/create" method="post">
-	<% if(flash && flash.err){ %>
-		<ul>
-		<% Object.keys(flash.err).forEach(function(error){%>
-			<li> <%- JSON.stringify(flash.err[error])%></li>
-		<%})%>
-		</ul>
-	<%}%>
-	<div>
-		<label>First Name:</label>
-		<input type="text" id="firstName" name="firstName"/><br/>
-	</div>
-	<div>
-		<label>Last Name:</label>
-		<input type="text" id="lastName" name="lastName"/><br/>
-	</div>
-	<div>
-		<label>Email:</label>
-		<input type="text" id="emailAddress" name="emailAddress"/><br/>
-	</div>
-	<div>
-		<label>Password:</label>
-		<input type="password" id="password_hash" name="password_hash"/><br/>
-	</div>
-	<div>
-		<label>Confirm Password:</label>
-		<input type="password" id="password_hash_confirmation" name="password_hash_confirmation"/><br/>
-	</div>
-	<div>
-		<label>Birthdate:</label>
-		<input type="date" id="birthDate" name="birthDate"/><br/>
-	</div>
-	<div>
-		<label>Phone number:</label>
-		<input type="text" id="phoneNumber" name="phoneNumber"/><br/>
-	</div>
+	<form action="/user/create" method="post">
+		<% if(flash && flash.err){ %>
+			<ul class="errors">
+			<% Object.keys(flash.err).forEach(function(error){%>
+				<li> <%= flash.err[error].message %></li>
+			<%})%>
+			</ul>
+		<%}%>
 
+		<label>Primer Nombre:</label>
+		<input type="text" id="firstName" name="firstName"/>
 
-	<input type="submit" value="Submit"/>
-</form>
+		<label>Apellido:</label>
+		<input type="text" id="lastName" name="lastName"/>
+
+		<label>Correo Electrónico:</label>
+		<input type="text" id="emailAddress" name="emailAddress"/>
+
+		<label>Contraseña:</label>
+		<input type="password" id="password_hash" name="password_hash"/>
+
+		<label>Confirmar Contraseña:</label>
+		<input type="password" id="password_hash_confirmation" name="password_hash_confirmation"/>
+
+		<label>Fecha de Nacimiento:</label>
+		<input type="date" id="birthDate" name="birthDate"/>
+
+		<label>Número Telefónico:</label>
+		<input type="text" id="phoneNumber" name="phoneNumber"/>
+		
+		<footer>
+			<input type="submit" value="Crear Cuenta" class="btn" /> <em>o</em> 
+			<a href="/"> Cancelar</a>
+		</footer>
+	</form>
+</div>
