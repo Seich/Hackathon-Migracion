@@ -42,9 +42,9 @@
       <h1><a href="/"><img src="/images/logo.png" alt="Remesame">Remesa.me</a></h1>
       <nav>
         <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/dashboard/settings">Configuración</a></li>
+          <!--<li><a href="/dashboard/settings">Configuración</a></li>-->
           <% if(session.authenticated){ %>
+            <li><a href="/user/show"><%- session.User.firstName %></a> | </li>
             <li><a href="/session/destroy">Cerrar Sesión</a></li>
           <%} else {%>
             <form action="/session/create" method="POST" class="form-signin">

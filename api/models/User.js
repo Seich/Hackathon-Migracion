@@ -35,7 +35,12 @@ module.exports = {
   	},
   	phoneNumber: {
   		type: 'string'
-  	}/*,
+  	},
+    balance: {
+      type: 'float',
+      required: true,
+      defaultsTo: 0
+    }/*,
     toJSON: function(){
       var obj = this.toObject();
       delete obj.password_hash;
