@@ -30,12 +30,6 @@
 				
 			</select>
 
-		<select name="expiration_date_year" id="expiration_date_year">
-			<% var d = new Date(); 
-			for(var i=d.getFullYear(); i< d.getFullYear()+10; i++){%>
-				<% var sd = i%2000; %>
-				<option value="<%=sd%>"><%=sd%></option>
-			<%}%>	
 			<label>Número de la Tarjeta:</label>
 			<input type="text" name="card_number" id="card_number"></input>
 			<label>Código de Seguridad:</label>
