@@ -20,7 +20,7 @@
       as you would normally: using <link/> tags.
       
     -->
-
+    <link rel="stylesheet" href="/styles/screen.css">
     <!--
 
       Support for LESS included by default
@@ -38,8 +38,8 @@
   <body>
 
     <!-- Include the view file for the current controller/route -->
-    <header>
-      <h1>Remesame</h1>
+    <header id="top">
+      <h1><a href="/"><img src="/images/logo.png" alt="Remesame">Remesa.me</a></h1>
       <nav>
         <ul>
           <li><a href="/">Inicio</a></li>
@@ -62,11 +62,19 @@
               <input type="submit" value="Sign-in"/>
             </form>
           <%}%>
+
         </ul>
       </nav>
     </header>
-    <%- body %>
 
+    <div class="container">
+    <%- body %>
+    </div>
+  
+    <footer>
+      <p class="block-left">Remesa.me &copy; All Rights Reserved.</p>
+      <p class="block-right"><a href="#">Politicas de Privacidad</a> <a href="#">Contactanos</a></p>
+    </footer>
 
     <!--
 

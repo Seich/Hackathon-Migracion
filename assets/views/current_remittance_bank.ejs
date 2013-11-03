@@ -1,0 +1,7 @@
+<li data-id="<%= index %>">
+	<img src="/images/logos/<%= logo %>">
+	<h3><%= name %></h3>
+	<input type="text" name="banks[<%= index %>][account]">
+	<input type="hidden" name="banks[<%= index %>][bank]" value="<%= id %>">
+	<button>Save</button>
+</li>

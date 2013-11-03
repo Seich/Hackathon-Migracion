@@ -1,9 +1,11 @@
-<h2>Hola, <%= firstName + " " + lastName %>! Bienvenido a Remesame!</h2>
-<p>
-    Balance: <strong>$ <%= currentBalance %></strong>
-    <a href="/dashboard/load">Recarga ahora!</a>
-</p>
-<div id="pending-transactions">
+<header class="dashboard">
+    <h2>Hola, <b><%= firstName + " " + lastName %></b>! Bienvenido a Remesa.me!</h2>
+    <p>
+        Balance: <strong>$ <%= currentBalance %></strong>
+        <a href="/dashboard/load" class="btn btn-left">Recarga ahora!</a><a href="/remittance/new" class="btn btn-right btn-red">Enviar Recarga</a>
+    </p>
+</header>
+<div class="pending-transactions">
     <h3>Transacciones Pendientes</h3>
     <table>
         <thead>
