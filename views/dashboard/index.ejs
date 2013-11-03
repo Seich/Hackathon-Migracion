@@ -1,0 +1,26 @@
+<h2>Hola, <%= firstName + " " + lastName %>! Bienvenido a Remesame!</h2>
+<p>
+    Balance: <strong>$ <%= currentBalance %></strong>
+    <a href="/dashboard/load">Recarga ahora!</a>
+</p>
+<div id="pending-transactions">
+    <h3>Transacciones Pendientes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha de Transacción</th>
+                <th>Destinatario</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% _.each(pendingTransactions, function (pt) {  %>
+            <tr>
+                <td><%= pt.transactionDate %></td>
+                <td><%= pt.transactionRecipient %></td>
+                <td><%= pt.transactionStatus %></td>
+            </tr>
+            <% });  %>
+        </tbody>
+    </table>
+</div>
