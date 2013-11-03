@@ -23,9 +23,9 @@ module.exports = {
    	Card.create(card, function (err, card){
     		if(err){
     			req.session.flash ={err:err}
-    			return res.redirect('/user/new');
+    			return res.redirect('/card/newcard');
     		}
-    		res.redirect('/user/show');
+    		res.redirect('/dashboard');
     	});
    },
 
