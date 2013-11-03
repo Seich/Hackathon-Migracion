@@ -38,10 +38,15 @@
         transactionStatus: "Retrasado"
     },
 
-
     {
         transactionDate: "15/10/2013",
         transactionRecipient: "Hondutel",
+        transactionStatus: "Procesado"
+    },
+
+    {
+        transactionDate: "1/05/2013",
+        transactionRecipient: "CableColor",
         transactionStatus: "Procesado"
     }
 

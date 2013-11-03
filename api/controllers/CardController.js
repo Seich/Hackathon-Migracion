@@ -29,22 +29,32 @@ module.exports = {
 				res.redirect('/dashboard');
 			});
 	 },
+	 destroy : function(req, res, next) {
+	 		Card.findOne(req.param('id')).done(function(err, card) {
+ 				card.destroy(function(err) {
+	 				res.redirect('/dashboard/load');
+  			});
+			});
+	 },
 
-	newcard: function(req, res){
+	'newcard': function(req, res){
 	 res.view('card/new',{});
 	},
 
-	reload: function(req, res){
-		User.findOne({id: req.session.User.id}, function(err,user) {
-			console.log(user.id);
-				var amount = req.param('amount');
-				user.balance += amount;
-				console.log(amount);
-				console.log(user.balance)
-				user.save(function(errr) {
-					req.session.User = user;
-				});
-			
+	'reload': function(req, res){
+		var am = parseFloat(req.param('amount')) + parseFloat(req.session.User.balance); 
+		User.update({
+			id: req.session.User.id
+		},{
+			balance : am
+		}, function(err,users) {
+			if(err){
+				req.session.flash = { err:err }
+				res.redirect('/dashboard/load');
+			} else {
+				req.session.User = users[0];
+				res.redirect('/dashboard');
+			}
 		});
 
 		
