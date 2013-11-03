@@ -32,7 +32,8 @@ module.exports = {
   	},
   	password_hash: {
   		type: 'string',
-  		required: true
+  		required: true,
+  		minlength: 6
   	},
   	birthDate: {
   		type: 'date'
