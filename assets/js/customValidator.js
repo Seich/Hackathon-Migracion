@@ -36,4 +36,26 @@ $(document).ready(function(){
 			element.text('OK!').addClass('valid')
 		}
 	});
+
+	$('.form-edit').validate({
+		rules: {
+			firstName: {
+				required: true
+		  	},
+		  	lastName: {
+		  		required: true
+		  	},
+		  	birthDate: {
+		  		required: true
+		  	}
+		},
+		messages: {
+		    emailAddress: {
+		      	remote: "Esta dirección de correo ya esta registrada."
+		    }
+		},
+		success: function(element) {
+			element.text('OK!').addClass('valid')
+		}
+	});
 });

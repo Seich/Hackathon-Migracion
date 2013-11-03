@@ -43,8 +43,26 @@
       <nav>
         <ul>
           <li><a href="/">Inicio</a></li>
-          <li><a href="/dashboard/settings">Perfil</a></li>
-          <li><a href="/logout">Cerrar Sesión</a></li>
+          <li><a href="/dashboard/settings">Configuración</a></li>
+          <% if(session.authenticated){ %>
+            <li><a href="/session/destroy">Cerrar Sesión</a></li>
+          <%} else {%>
+            <form action="/session/create" method="POST" class="form-signin">
+              <h2 class="form-signin-heading">Please sign in...</h2>
+              <% if(flash && flash.err){%>
+                <ul>
+                  <% Object.keys(flash.err).forEach(function(error){%>
+                    <li><%- JSON.stringify(flash.err[error])%></li>
+                  <%})%>
+                </ul>
+              <%}%>
+
+              <input type="text" placeholder="Email address" name="email">
+              <input type="password" placeholder="Password" name="password">
+              <input type="submit" value="Sign-in"/>
+            </form>
+          <%}%>
+
         </ul>
       </nav>
     </header>
