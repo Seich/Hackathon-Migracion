@@ -7,7 +7,8 @@
  */
 
 module.exports = {
-
+  schema: true,
+  
   attributes: {
 
   	user_id: 'INTEGER',
