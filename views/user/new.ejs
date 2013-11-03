@@ -1,7 +1,7 @@
-<div class="form-signup form-slim">
+<div class="form-slim">
 	<h2>Crear Nueva Cuenta</h2>
 
-	<form action="/user/create" method="post">
+	<form class="form-signup" action="/user/create" method="post">
 		<% if(flash && flash.err){ %>
 			<ul class="errors">
 			<% Object.keys(flash.err).forEach(function(error){%>
