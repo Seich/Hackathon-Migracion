@@ -1,5 +1,5 @@
 /**
- * CardController
+ * ServiceController
  *
  * @module      :: Controller
  * @description	:: A set of functions called `actions`.
@@ -17,16 +17,17 @@
 
 module.exports = {
     
-  newcard: function(req, res){
-	res.view('card/new',{});
-  },
+  _config: {},
 
+  find_by_country: function(req, res) {
+  	Service.find(req.param('country')).exec(function(err, services){
+  		if (err) {
+  			return res.send(err, 500);
+  		}
 
-  /**
-   * Overrides for the settings in `config/controllers.js`
-   * (specific to CardController)
-   */
-  _config: {}
+  		return res.json(services);
+  	});
+  }
 
   
 };

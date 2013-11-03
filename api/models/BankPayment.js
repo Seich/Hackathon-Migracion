@@ -7,23 +7,23 @@
  */
 
 module.exports = {
+	schema: true,
 
-  attributes: {
-  	
-  	// Belongs to Remittance
-  	remittance_id: {
-  		type: 'INTEGER'
-  	},
+	attributes: {
+		
+		// Belongs to Remittance
+		remittance_id: {
+			type: 'INTEGER'
+		},
 
-  	// Has a service
-  	service_id: {
-  		type: 'INTEGER'
-  	},
+		// Has a service
+		service_id: {
+			type: 'INTEGER'
+		},
 
-  	contract: {
-  		type: 'STRING'
-  	}
-    
-  }
-
+		contract: {
+			type: 'STRING'
+		}
+	  
+	}
 };
