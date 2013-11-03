@@ -10,8 +10,30 @@
 	</div>
 	<div>
 		<label>Fecha de Expiración:</label>
-		<input type="date" name="expiration_date_month" id="expiration_date_month"></input>
-		<input type="date" name="expiration_date_year" id="expiration_date_year"></input>
+		<select name="expiration_date_month" id="expiration_date_month">
+			<option value="1">01</option>
+			<option value="2">02</option>
+			<option value="3">03</option>
+			<option value="4">04</option>
+			<option value="5">05</option>
+			<option value="6">06</option>
+			<option value="7">07</option>
+			<option value="8">08</option>
+			<option value="9">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		</select>
+
+		<select>
+			<%
+			var d = new Date(); 
+			for(var i=d.getFullYear(); i< d.getFullYear()+10; i++){%>
+				<% var sd = i%2000; %>
+				<option value="<%=sd%>"><%=sd%></option>
+				<%}%>
+			
+		</select>
 	</div>
 	<div>
 		<label>Número de la Tarjeta:</label>
