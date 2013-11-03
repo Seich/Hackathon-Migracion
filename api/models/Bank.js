@@ -17,6 +17,10 @@ module.exports = {
 		//TODO: This should be moved to a different table.
 		country: {
 			type: 'STRING'
+		},
+
+		logo: {
+			type: 'STRING'
 		}
 	}
 
