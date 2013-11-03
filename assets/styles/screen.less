@@ -18,6 +18,17 @@ body {
 	margin: 0;
 }
 
+.logo-animation {
+	display: block;
+	position: relative;
+	height: 400px;
+	width: 100%;
+	background-image: url('../images/logo.png');
+	background-size: 250px auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .container {
 	margin: 2em auto;
 	width: 75%;
@@ -162,12 +173,17 @@ form {
 
 	input[type=text],
 	input[type=password],
-	input[type=date] {
+	input[type=date],
+	input[type=tel] {
 		padding: 0.5em;
 		border-radius: 1px;
 		border: 1px solid #ccc;
 		min-width: 100px;
 		margin-bottom: 1em;
+	}
+
+	select {
+		margin-bottom: 1.5em;
 	}
 
 	li {
@@ -236,7 +252,8 @@ form {
 
 		input[type=text],
 		input[type=password],
-		input[type=date] {
+		input[type=date],
+		input[type=tel] {
 			display: inline-block;
 			width: 95%;
 			padding: 0.7em;
@@ -267,6 +284,33 @@ form {
 	padding-top: 1em;
 }
 
+.show-user {
+	background: #FFF;
+	padding: 1em;
+	width: 40%;
+	margin: 0 auto;
+	border: 1px solid #EEE;
+
+	label {
+		margin: 0;
+		font-weight: bold;
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	h2 {
+		margin-top: 0;
+		font-weight: bold;
+
+		a {
+			font-size: 0.5em;
+			color: @red;
+		}
+	}
+}
+
 .btn {
 	padding: 0.3em 0.5em;
 	background: @blue;
@@ -291,6 +335,31 @@ form {
 	&.btn-red {
 		background: @red;
 		border-bottom: 3px solid darken(@red, 10%);
+	}
+
+	&.btn-yellow {
+		background: @yellow;
+		border-bottom: 3px solid darken(@yellow, 10%);
+	}
+
+	&.btn-green {
+		background: @green;
+		border-bottom: 3px solid darken(@green, 10%);
+	}
+
+	&.btn-blue {
+		background: @blue;
+		border-bottom: 3px solid darken(@blue, 10%);
+	}
+
+	&.btn-purple {
+		background: @purple;
+		border-bottom: 3px solid darken(@purple, 10%);
+	}
+
+	&.btn-brown {
+		background: @brown;
+		border-bottom: 3px solid darken(@brown, 10%);
 	}
 
 	&:hover {

@@ -44,6 +44,7 @@
         <ul>
           <!--<li><a href="/dashboard/settings">Configuración</a></li>-->
           <% if(session.authenticated){ %>
+            <li><a href="/dashboard">Panel de Control</a></li>
             <li><a href="/user/show"><%- session.User.firstName %></a></li>
             <li><a href="/session/destroy">Cerrar Sesión</a></li>
           <%} else {%>
