@@ -1,12 +1,3 @@
-/**
- * app.js
- *
- * This file contains some conventional defaults for working with Socket.io + Sails.
- * It is designed to get you up and running fast, but is by no means anything special.
- *
- * Feel free to change none, some, or ALL of this file to fit your needs!
- */
-
  $(function() {
 	$('#destination', '#new_remittance').on('change', function() {
 
@@ -16,14 +7,18 @@
 			$new_service.removeAttr('disabled');
 
 			$new_service.on('click', function() {
-				var $service = $('.new', "ul.services");
+				var $service = $('.new_services').show();
+				$service.empty();
 				$.each(services, function(i, service) {
-					var o = $('<option/>', {
-						'text': service.company,
-						'value': service.company
+					var option = $('<li/>', {
+						'text': service.company
 					});
 
-					o.appendTo($service);
+					option.prepend($('<img />', {
+						src: '/images/logos/' + service.logo
+					}));
+
+					option.appendTo($service);
 				});
 
 				return false;
