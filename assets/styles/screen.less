@@ -1,0 +1,143 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+@yellow: #FFE142;
+@green: #A6DD00;
+@blue: #0FB9FF;
+@purple: #7C30E8;
+@red: rgb(255, 93, 96);
+@brown: #441C10;
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background: #fafafa;
+	color: #333;
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	margin: 2em auto;
+	width: 75%;
+
+	h2 {
+		font-weight: 300;
+	}
+	
+	header.dashboard {
+		h2 {
+			display: inline-block;
+		}
+
+		p {
+			display: inline-block;
+			float: right;
+			background: #E9E9E9;
+			padding: 1em;
+			border-radius: 3px;
+		}
+	}
+
+	.pending-transactions {
+		h3 {
+			border-bottom: 1px solid #dfdfdf;
+		}
+
+		table {
+			width: 70%;
+			margin: 0 auto;
+		}
+
+		thead {
+			background: #eee;
+
+			th {
+				margin: 0;
+				border: none;
+				text-align: left;
+			}
+		}
+	}
+
+}
+
+header#top {
+	background: white;
+	padding: 1em 4em;
+	border-bottom: 1px solid #eee;
+
+	h1, nav {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	h1 {
+		width: 66%;
+		margin: 0;
+
+		img {
+			display: inline-block;
+			margin: 0 1em;
+			max-width: 100px;
+			vertical-align: middle;
+		}
+	}
+
+	nav {
+		text-align: right;
+		width: 33%;
+	}
+
+	a {
+		font-size: 1.1em;
+		text-decoration: none;
+		color: @red;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	nav li {
+		display: inline;
+		margin: 0 0.5em;
+	}
+}
+
+.btn {
+	padding: 0.3em 0.5em;
+	background: @blue;
+	color: white;
+	text-decoration: none;
+	border-radius: 3px;
+	border-bottom: 3px solid darken(@blue, 10%);
+	margin: 0.1em;
+
+	&.btn-left {
+		margin-right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	&.btn-right {
+		margin-left: 0;
+		border-radius: 0 3px 3px 0;
+	}
+
+	&.btn-red {
+		background: @red;
+		border-bottom: 3px solid darken(@red, 10%);
+	}
+
+	&:hover {
+		position: relative;
+		top: 1px;
+		border-bottom-width: 2px;
+	}
+
+	&:active {
+		top: 3px;
+		border-bottom-width: 0;	
+	}
+}
