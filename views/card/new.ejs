@@ -1,53 +1,58 @@
-<div>
-	<h1>Agregar Nueva Tarjeta</h1>
+<div class="form-slim">
+	<h2>Agregar Nueva Tarjeta</h2>
+
+	<form action="/card/create" method="post">	
+			<label>Nombre:</label>
+			<input type="text" name="owner_name" id="owner_name"></input>
+			<label>Fecha de Expiración:</label>
+			<select name="expiration_date_month" id="expiration_date_month">
+				<option value="1">01</option>
+				<option value="2">02</option>
+				<option value="3">03</option>
+				<option value="4">04</option>
+				<option value="5">05</option>
+				<option value="6">06</option>
+				<option value="7">07</option>
+				<option value="8">08</option>
+				<option value="9">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+
+			<select name="expiration_date_year" id="expiration_date_year">
+				<%
+				var d = new Date(); 
+				for(var i = d.getFullYear(); i < d.getFullYear() + 10; i++) { %>
+					<% var sd = i % 2000; %>
+					<option value="<%=sd%>"><%=sd%></option>
+				<% } %>
+				
+			</select>
+
+			<label>Número de la Tarjeta:</label>
+			<input type="text" name="card_number" id="card_number"></input>
+			<label>Código de Seguridad:</label>
+			<input type="text" name="card_security_code" id="card_security_code"></input>
+
+			
+			<h2>Dirección de Recibo</h2>
+			<label>País:</label>
+			<input type="text" name="billing_country" id="billing_country"></input>
+			<label>Calle:</label>
+			<input type="text" name="billing_street" id="billing_street"></input>
+			<label>Ciudad:</label>
+			<input type="text" name="billing_city" id="billing_city"></input>
+			<label>Provincia:</label>
+			<input type="text" name="billing_province" id="billing_province"></input>
+			<label>Código Postal:</label>
+			<input type="text" name="postal_code" id="postal_code"></input>
+			<label>Telfono:</label>
+			<input type="tel" name="phone_number" id="phone_number"></input>
+			
+			<footer>
+				<input type="submit" value="Guardar" class="btn"> <em>o</em>
+				<a href="/dashboard/load">Cancelar</a>
+			</footer>
+	</form>
 </div>
-
-
-<form action="/card/create" method="post">	
-	<div>
-		<label>Nombre:</label>
-		<input type="text" name="owner_name" id="owner_name"></input>
-	</div>
-	<div>
-		<label>Fecha de Expiración:</label>
-		<input type="date" name="expiration_date_month" id="expiration_date_month"></input>
-		<input type="date" name="expiration_date_year" id="expiration_date_year"></input>
-	</div>
-	<div>
-		<label>Número de la Tarjeta:</label>
-		<input type="text" name="card_number" id="card_number"></input>
-	</div>
-	<div>
-		<label>Código de Seguridad:</label>
-		<input type="text" name="card_security_code" id="card_security_code"></input>
-	</div>
-		
-		<h2>Dirección de Recibo</h2>
-	<div>
-		<label>País:</label>
-		<input type="text" name="billing_country" id="billing_country"></input>
-	</div>
-	<div>
-		<label>Calle:</label>
-		<input type="text" name="billing_street" id="billing_street"></input>
-	</div>
-	<div>
-		<label>Ciudad:</label>
-		<input type="text" name="billing_city" id="billing_city"></input>
-	</div>
-	<div>
-		<label>Provincia:</label>
-		<input type="text" name="billing_province" id="billing_province"></input>
-	</div>
-	<div>
-		<label>Código Postal:</label>
-		<input type="text" name="postal_code" id="postal_code"></input>
-	</div>
-	<div>
-		<label>Telfono:</label>
-		<input type="tel" name="phone_number" id="phone_number"></input>
-	</div>
-		<button type="submit">Guardar</button>
-
-	</div>
-</form>

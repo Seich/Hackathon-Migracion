@@ -1,3 +1,11 @@
+<script>
+if(session.authenticated){
+	location.assign('/dashboard');
+} else {
+	location.assign('/home');
+}
+    
+</script>
 <div class="logo-animation"></div>      
 
 <div class="main-content">

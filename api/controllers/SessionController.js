@@ -55,13 +55,13 @@ module.exports = {
 
 			req.session.authenticated = true;
 			req.session.User = user;
-			res.redirect('/user/show/' + user.id);
+			res.redirect('/dashboard');
 
 		});
 	},
 	destroy: function(req, res, next){
 		req.session.destroy();
-		res.redirect('/session/new');
+		res.redirect('/home');
 	},
   /**
    * Overrides for the settings in `config/controllers.js`

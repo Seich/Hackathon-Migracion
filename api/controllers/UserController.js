@@ -98,7 +98,7 @@ module.exports = {
         
         
     },
-    'edit': function(req, res){
+    edit: function(req, res){
         User.findOne(req.session.User.id,function(err, user) {
             if(err){
                 req.session.flash ={err:err}
