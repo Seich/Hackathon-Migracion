@@ -29,10 +29,5 @@ $(document).ready(function(){
 		success: function(element) {
 			element.text('OK!').addClass('valid')
 		}
-	}, submitHandler: function(form) {
-    // some other code
-    // maybe disabling submit button
-    // then:
-    $(form).submit();
-  });
+	});
 });
