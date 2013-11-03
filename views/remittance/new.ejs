@@ -1,10 +1,11 @@
 <h2>Enviar Remesa</h2>
-<form action="remittance/create" method="POST">
+<form action="remittance/create" method="POST" id="new_remittance">
 	<label for="quantity">Cantidad</label>
 	<input type="text" id="quantity" name="quantity">
 
 	<label for="destination">Destino</label>
 	<select name="destination" id="destination">
+		<option value="0">Selecciona el Destino</option>
 		<option value="Afghanistan">Afghanistan</option>
 		<option value="Åland Islands">Åland Islands</option>
 		<option value="Albania">Albania</option>
@@ -259,7 +260,7 @@
 		<option value="Uzbekistan">Uzbekistan</option>
 		<option value="Vanuatu">Vanuatu</option>
 		<option value="Venezuel">Venezuel</option>
-		<option value="olivarian Republic Of">olivarian Republic Of</option>
+		<option value="Bolivarian Republic Of">Bolivarian Republic Of</option>
 		<option value="Viet Nam">Viet Nam</option>
 		<option value="Virgin Island">Virgin Island</option>
 		<option value="ritish">ritish</option>
@@ -272,9 +273,13 @@
 		<option value="Zimbabwe">Zimbabwe</option>
 	</select>
 	
-	<ul class="services"></ul>
+	<ul class="services">
+		<li>
+			<select class="new"></select>
+		</li>
+	</ul>
 
-	<button>Nuevo Servicio</button>
+	<button id="new_service" disabled="true">Nuevo Servicio</button>
 
 	<input type="submit" value="Enviar">
 </form>
