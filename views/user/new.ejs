@@ -4,7 +4,7 @@
 	<% if(flash && flash.err){ %>
 		<ul>
 		<% Object.keys(flash.err).forEach(function(error){%>
-			<li> <%= JSON.stringify(flash.err[error])%></li>
+			<li> <%- JSON.stringify(flash.err[error])%></li>
 		<%})%>
 		</ul>
 	<%}%>
@@ -19,10 +19,6 @@
 	<div>
 		<label>Email:</label>
 		<input type="text" id="emailAddress" name="emailAddress"/><br/>
-	</div>
-	<div>
-		<label>Username:</label>
-		<input type="text" id="username" name="username"/><br/>
 	</div>
 	<div>
 		<label>Password:</label>
@@ -43,5 +39,4 @@
 
 
 	<input type="submit" value="Submit"/>
-	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
 </form>

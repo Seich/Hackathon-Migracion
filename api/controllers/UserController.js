@@ -21,6 +21,16 @@ module.exports = {
     	res.view();
     	
     },
+    'email_exists': function(req, res){
+    	User.findOne({emailAddress: req.param('emailAddress')}, function(err, user){
+    		if(err || user != undefined) {
+    			res.send(false);
+    		} else {
+    			res.send(true);	
+    		}
+    		
+    	});
+    },
     create: function(req, res, next){
     	//console.log(req);
         console.log("baka2");
@@ -51,6 +61,7 @@ module.exports = {
         values.password_hash = MD5(values.password);
         next();
     },
+
 
   /**
    * Overrides for the settings in `config/controllers.js`
