@@ -10,7 +10,7 @@
 		$.getJSON('/service/find_by_country', {
 			country: $(this).val()
 		}).done(function(services, status) {
-			$new_service_button.removeAttr('disabled');
+			$new_service_button.show();
 			$new_service_button.on('click', function() {
 				$new_service_list.show().empty();
 				$.each(services, function(i, service) {
@@ -31,7 +31,7 @@
 		$.getJSON('/bank/find_by_country', {
 			country: $(this).val()
 		}).done(function(banks, status){
-			$new_deposit_button.removeAttr('disabled');
+			$new_deposit_button.show();
 			$new_deposit_button.on('click',function(){
 				$new_banks_list.show().empty();
 				$.each(banks, function(i,bank){
