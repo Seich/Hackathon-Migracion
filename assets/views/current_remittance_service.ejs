@@ -2,8 +2,12 @@
 	<img src="/images/logos/<%= logo %>">
 	<div>
 		<h3><%= company %></h3>
-		<input type="text" name="services[<%= index %>][account]">
+		<input type="text" placeholder="Número de Contrato" name="services[<%= index %>][account]">
 		<input type="hidden" name="services[<%= index %>][service]" value="<%= id %>">
-		<button>Save</button>
+		<button class="btn btn-green">Save</button>
+	</div>
+
+	<div class="total">
+		<span>$0.00</span>
 	</div>
 </li>
