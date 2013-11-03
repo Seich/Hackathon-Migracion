@@ -3,7 +3,7 @@
 	<% if(flash && flash.err){%>
 		<ul>
 			<% Object.keys(flash.err).forEach(function(error){%>
-				<li><%- JSON.stringify(flash.err[error])%></li>
+				<li><%- flash.err[0].message %></li>
 			<%})%>
 		</ul>
 	<%}%>
