@@ -12,18 +12,27 @@
 	</div>
 	<div>
 		<label>Email:</label>
-		<input type="text" id="emailAddress" name="emailAddress" value="<%-user.emailAddress %>"/><br/>
+		<input type="text" id="emailAddress" name="emailAddress" value="<%-user.emailAddress %>" disabled /><br/>
 	</div>
 	
 	<div>
 		<label>Birthdate:</label>
-		<input type="date" id="birthDate" name="birthDate" value="<%-user.birthDate %>"/><br/>
+		<% var tempDate = new Date(user.birthDate); %>
+		<input type="date" id="birthDate" name="birthDate" value="<%-tempDate.toJSON().split('T')[0] %>"/><br/>
 	</div>
 	<div>
 		<label>Phone number:</label>
 		<input type="text" id="phoneNumber" name="phoneNumber" value="<%-user.phoneNumber %>"/><br/>
 	</div>
 
+	<div>
+		<label>Contraseña (dejar en blanco si se desea mantener la misma)</label>
+		<input type="password" id="password_hash" name="password_hash"/><br/>
+	</div>
+	<div>
+		<label>Confirmar Contraseña:</label>
+		<input type="password" id="password_hash_confirmation" name="password_hash_confirmation"/><br/>
+	</div>
 
 	<input type="submit" value="Submit"/>
 </form>

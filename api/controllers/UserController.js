@@ -30,6 +30,9 @@ module.exports = {
     		
     	});
     },
+    'changePasswordValidation': function(req, res){
+        res.send(req.params["password_hash"].length >= 6);
+    },
     create: function(req, res, next){
         var user = req.params.all();
         var passwordHash = require('password-hash');
@@ -49,6 +52,7 @@ module.exports = {
     	
     },
     update: function(req, res, next){
+        console.log(req.params.all());
         res.redirect('/user/show');
     },
     'edit': function(req, res){
