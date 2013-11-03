@@ -23,7 +23,7 @@ $(document).ready(function(){
 	  	password_hash: {
 	  		type: 'string',
 	  		required: true,
-	  		minlength: 6
+	  		minLength: 6
 	  	},
 	  	birthDate: {
 	  		type: 'date'
@@ -32,11 +32,12 @@ $(document).ready(function(){
 	  		type: 'string'
 	  	},
 	  	confirmation_password_hash: {
-	  		minlength: 6,
+	  		minLength: 6,
 	  		equalTo: "#password_hash"
 	  	}	
 	},
 	success: function(element) {
 		element.text('OK!').addClass('valid')
-	});
+	}
+});
 });
