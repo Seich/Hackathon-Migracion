@@ -1,6 +1,23 @@
-<% console.log(cards); 
-_.each(cards, function (el){
+<% _.each(cards, function (el){
  %>
+ <div>
+ 	
 	<h1><%= el.owner_name %></h1>
+	<h3>Fecha de expiración: <%=el.expiration_date_month%>-<%=el.expiration_date_year%></h3>
+	<h3>Número de la tarjeta: <%=el.card_number%></h3>
+	<h3>Dirección de Facturación</h3>
+	<p>
+		<%= el.billing_street%>, 
+		<%= el.billing_city%>, 
+		<%= el.billing_province%>, 
+		<%= el.billing_country%>.
+	</p>
+	<p>
+		Código Postal:<%= el.postal_code%>
+	</p>
+	<p>
+		Teléfono:<%= el.phone_number%>
+	</p>
+ </div>
 <% }); %>
 <button>Agregar nueva tarjeta</button>
