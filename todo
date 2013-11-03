@@ -1,16 +1,16 @@
 - Homepage
-- Login / Sign Up
-- Admin Tarjetas de Credito
-- Pagina de Destinarios / Servicios
-
 - Definir todas las policies
-/////////////////////////////////
-RECARGAR TARJETA
-SIGN UP 
-SIGN IN
 404 /*Si queda tiempo*/
-EDIT USUARIO
-SHOW USUARIO
 Responsive /*Si queda tiempo*/
 Tarjetas
 ARREGLAR TABLA EN EL DASHBOARD
+Terminar el manejo de remesas
+
+IN DEVELOPMENT
+================
+- Lochito
+	EDIT USUARIO
+	SHOW USUARIO (mostrar el perfil)
+
+- Luis & Wilfredo
+	RECARGAR TARJETA
