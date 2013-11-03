@@ -1,11 +1,8 @@
+<% if(session.authenticated){ %>
 <script>
-if(session.authenticated){
-	location.assign('/dashboard');
-} else {
-	location.assign('/home');
-}
-    
+	location.assign('/dashboard');    
 </script>
+<% } else { %>
 <div class="logo-animation"></div>      
 
 <div class="main-content">
@@ -21,11 +18,8 @@ if(session.authenticated){
 
 <div class="buttons-cont">
     <a href="#" class="btn btn-green">Lee más</a>
-    <% if(session.authenticated){ %>
-    <a href="/dashboard" class="btn btn-blue">Ve a tu panel de control</a>
-    <% } else { %>
     <a href="/session/new" class="btn btn-blue">Inicia Sesión</a>
-    <% }  %>
     <span>Si aún no tienes una cuenta, intenta <a href="/user/new">Registrarte</a></span>
 </div>
 </div>
+<% } %>
