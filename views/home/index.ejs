@@ -1,8 +1,25 @@
+<% if(session.authenticated){ %>
 <script>
-if(session.authenticated){
-	location.assign('/dashboard');
-} else {
-	location.assign('/home');
-}
-    
+	location.assign('/dashboard');    
 </script>
+<% } else { %>
+<div class="logo-animation"></div>      
+
+<div class="main-content">
+  <hgroup>
+      <h1>Remesa.me</h1>
+      <h3>Paga y Ahorra</h3>
+  </hgroup>
+
+  <p>
+    Remesa.me te permite enviar y manejar tus remesas!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptas similique aut eaque ipsa cupiditate temporibus impedit harum eveniet esse? Eligendi, amet, explicabo rem facere neque similique inventore nihil delectus.
+</p>
+
+<div class="buttons-cont">
+    <a href="#" class="btn btn-green">Lee más</a>
+    <a href="/session/new" class="btn btn-blue">Inicia Sesión</a>
+    <span>Si aún no tienes una cuenta, intenta <a href="/user/new">Registrarte</a></span>
+</div>
+</div>
+<% } %>
