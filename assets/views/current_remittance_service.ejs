@@ -1,7 +1,10 @@
 <li data-id="<%= index %>">
 	<img src="/images/logos/<%= logo %>">
-	<h3><%= company %></h3>
-	<input type="text" name="services[<%= index %>][account]">
-	<input type="hidden" name="services[<%= index %>][service]" value="<%= id %>">
-	<button>Save</button>
+
+	<div>
+		<h3><%= company %></h3>
+		<input type="text" name="services[<%= index %>][account]" placeholder="Numero de Contrato">
+		<input type="hidden" name="services[<%= index %>][service]" value="<%= id %>">
+		<button>Save</button>
+	</div>
 </li>

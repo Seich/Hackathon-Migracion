@@ -20,7 +20,7 @@
             <tr>
                 <td><%= pt.transactionDate %></td>
                 <td><%= pt.transactionRecipient %></td>
-                <td><%= pt.transactionStatus %></td>
+                <td class="<%= pt.transactionStatus %>"><%= pt.transactionStatus %></td>
             </tr>
             <% });  %>
         </tbody>
