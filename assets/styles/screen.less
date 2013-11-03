@@ -77,6 +77,14 @@ header#top {
 		width: 66%;
 		margin: 0;
 
+		a {
+			color: #444;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
 		img {
 			display: inline-block;
 			margin: 0 1em;
@@ -103,6 +111,36 @@ header#top {
 	nav li {
 		display: inline;
 		margin: 0 0.5em;
+	}
+}
+
+footer {
+	background: #05222E;
+	color: #FFF;
+	line-height: 35px;
+	min-height: 35px;
+	padding: 0 4em;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	p {
+		display: inline-block;
+		width: 47%;
+
+		&.block-right {
+			text-align: right;
+		}
+
+		a {
+			color: white;
+			margin: 0 0.3em;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 }
 
