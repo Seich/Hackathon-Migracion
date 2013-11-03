@@ -22,13 +22,12 @@
 			});
 
 			$('.new_services').on('click', 'li', function() {
-				var $this = $(this);
-				var i = $this.attr('data-id');
+				var i = $(this).attr('data-id');
 				
+				services[i].index = i;
 				$cur_service_list.append(new EJS({url: '/views/current_remittance_service.ejs'}).render(services[i]));
 				$new_service_list.hide();
 			});
-
 		});
 
 		var req_banks = $.getJSON('/service/find_by_country', {country: $(this).val()});

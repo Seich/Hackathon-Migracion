@@ -10,6 +10,10 @@ module.exports = {
 		destination: {
 			type: 'STRING',
 			require: true
+		},
+
+		user_id: {
+			type: 'INTEGER'
 		}
 	}
 

@@ -20,10 +20,6 @@ module.exports = {
 			type: 'STRING'
 		},
 
-		name: {
-			type: 'STRING'
-		},
-
 		logo: {
 			type: 'STRING'
 		}
