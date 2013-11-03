@@ -9,12 +9,13 @@ $(document).ready(function(){
 		  	},
 		  	emailAddress: {
 		      	email:true,
-		  		required: true
+		  		required: true,
+		  		remote: {
+			    	url: "/user/email_exists",
+			        type: "post"
+			    }
 		  	},
-		  	username: {
-		  		required: true
-		  	},
-		  	password_hash: {
+		  	password: {
 		  		required: true,
 		  		minlength: 6
 		  	},
@@ -22,9 +23,14 @@ $(document).ready(function(){
 		  		required: true
 		  	},
 		  	password_hash_confirmation: {
-		  		equalTo: "#password_hash",
+		  		equalTo: "#password",
 		  		minlength: 6
 		  	}	
+		},
+		messages: {
+		    emailAddress: {
+		      	remote: "Esta dirección de correo ya esta registrada."
+		    }
 		},
 		success: function(element) {
 			element.text('OK!').addClass('valid')

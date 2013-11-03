@@ -25,11 +25,6 @@ module.exports = {
   		required: true,
       unique: true
   	},
-  	username: {
-  		type: 'string',
-  		required: true,
-      unique: true
-  	},
   	password_hash: {
   		type: 'string',
   		required: true,
@@ -40,12 +35,12 @@ module.exports = {
   	},
   	phoneNumber: {
   		type: 'string'
-  	},
+  	}/*,
     toJSON: function(){
       var obj = this.toObject();
       delete obj.password_hash;
       return obj;
-    }
+    }*/
 
     
   }
