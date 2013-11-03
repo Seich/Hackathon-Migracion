@@ -61,8 +61,7 @@
       if (err) {
         return res.send(err, 500);
       }
-
-      return res.view(cards);
+      return res.view('dashboard/load',{cards: cards});
       });
       
     },
