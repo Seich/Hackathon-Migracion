@@ -1,12 +1,12 @@
-<div>
-	<h1><%- user.firstName %> <%- user.lastName %></h1>
+<div class="show-user">
+	<h2><%- user.firstName %> <%- user.lastName %> <a href="/user/edit">Editar Perfil</a></h2>
 	<div>
 		<label>Correo: </label>
 		<p><%- user.emailAddress %></p>
 	</div>
 	<div>
 		<label>Fecha de Nacimiento: </label>
-		<p><%- user.birthDate %></p>
+		<p><%- user.birthDate.getDate() %>/<%- user.birthDate.getMonth() + 1 %>/<%- user.birthDate.getFullYear() %></p>
 	</div>
 	<div>
 		<label>Número Telefónico: </label>
@@ -14,7 +14,6 @@
 	</div>
 	<div>
 		<label>Balance: </label>
-		<p><%- user.balance %></p>
+		<p><b>$</b>	<%- user.balance %></p>
 	</div>
-	<a href="/user/edit">edit</a>
 </div>
