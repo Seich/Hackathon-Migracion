@@ -19,7 +19,6 @@
 module.exports = {
     'new': function(req, res){
     	res.view();
-    	
     },
     'email_exists': function(req, res){
     	User.findOne({emailAddress: req.param('emailAddress')}, function(err, user){
@@ -48,8 +47,20 @@ module.exports = {
     	});
     	
     },
-    edit: function(req, res, next){
-        console.log(req.params["id"]);
+    update: function(req, res, next){
+        res.redirect('/user/show');
+    },
+    'edit': function(req, res){
+        User.findOne(req.session.User.id,function(err, user) {
+            if(err){
+                req.session.flash ={err:err}
+
+                return res.redirect('/user/new');
+            }
+            res.view({
+                user: user
+            });
+        });
     },
     show: function(req, res, next) {
     	User.findOne(req.session.User.id,function(err, user) {
@@ -58,9 +69,8 @@ module.exports = {
     		res.view({
     			user: user
     		});
-    	})
-    },
-    
+    	});
+    }
 
 
   /**
