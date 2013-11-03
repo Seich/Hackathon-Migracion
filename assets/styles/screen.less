@@ -24,11 +24,13 @@ body {
 
 	h2 {
 		font-weight: 300;
+		border-bottom: 1px solid #EEE;
 	}
 	
 	header.dashboard {
 		h2 {
 			display: inline-block;
+			border-bottom: none;
 		}
 
 		p {
@@ -58,6 +60,14 @@ body {
 				border: none;
 				text-align: left;
 			}
+		}
+
+		.Procesado {
+			color: @green;
+		}
+
+		.Retrasado {
+			color: @red;
 		}
 	}
 
@@ -142,6 +152,54 @@ footer {
 			}
 		}
 	}
+}
+
+form {
+	label {
+		display: block;
+	}
+
+	input[type=text] {
+		padding: 0.5em;
+		border-radius: 1px;
+		border: 1px solid #ccc;
+		min-width: 100px;
+		margin-bottom: 1em;
+	}
+
+	li {
+		background: #E9E9E9;
+		margin-bottom: 1em;
+		padding: 1em;
+		width: 60%;
+		min-height: 100px;
+	}
+
+}
+
+#new_remittance li {
+	list-style: none;
+
+	img {
+		display: inline-block;
+	}
+
+	h3 {
+		margin: 0;
+		vertical-align: top;
+	}
+
+	div {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 1em;
+	}
+}
+
+.new_services {
+	border-top: 7px solid #DDD;
+	margin-top: 1em;
+	padding-top: 1em;
 }
 
 .btn {
