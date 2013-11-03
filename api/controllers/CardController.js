@@ -17,7 +17,9 @@
 
 module.exports = {
     
-  
+  newcard: function(req, res){
+	res.view('card/new',{});
+  },
 
 
   /**
