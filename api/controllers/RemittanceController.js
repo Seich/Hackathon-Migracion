@@ -6,7 +6,18 @@ module.exports = {
   },
 
   create: function(req, res) {
-  	var quantity = parseInt(req.param('quantity'));
+
+  	/*Remittance.create({user_id: parseInt(req.session.User.id), quantity: parseFloat(30), destination: req.param('destination')}, function userCreated(err, rem){
+    		if(err){
+    			req.session.flash ={err:err}
+
+    			return res.redirect('/user/new');
+    		}
+            req.session.authenticated = true;
+            req.session.User = user;
+    		res.redirect('/user/show')
+    	});*/
+  	/*var quantity = parseInt(req.param('quantity'));
   	var amount = 0;
   	
   	if(typeof req.param('services')[0].service == "string"){
@@ -23,10 +34,11 @@ module.exports = {
 		req.session.flash={
 			err: notEnoughMoney
 		}
+
 		res.redirect('/remittance/new');
 		return;
-  	}
+  	}*/
   	
-  	res.send(req.body);
+  	res.redirect('/dashboard');
   }
 };

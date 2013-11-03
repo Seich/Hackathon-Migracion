@@ -29,18 +29,26 @@
 			$('.current_services').on('click', 'button', function(event){
 
 				event.preventDefault();
-				var quantity = Math.floor((Math.random()*100)+1);
-				
-				var $accoutInput = $($(this).parent('div:first').find('input:first')[0]);
+				var quantity = 0;
+				if($($(this).parents('li:first')[0]).hasClass('deposite')){
+					quantity = parseFloat($($(this).parents('div:first').find('input:first')[0]).val());
+				} else {
+					quantity= Math.floor((Math.random()*100)+1);
+					var $accoutInput = $($(this).parents('div:first').find('input:first')[0]);
 				//var $amountInput = $($(this).parent('div:first').find('input:last')[0]);
-				if($accoutInput.val().length < 1){
-					return;
+					if($accoutInput.val().length < 1){
+						return;
+					}
+					$accoutInput.attr('readonly', true);
+					$($(this).parents('li:first').children('.total span')[0]).text(quantity);
 				}
-				$accoutInput.attr('readonly', true);
+				 
+				
 				var total = parseFloat($($('span.total')[0]).text());
 				
 				total += parseFloat(quantity);
 				$($('span.total')[0]).text(total);
+				$(this).hide();
 
 				//$amountInput.attr('value', quantity).attr('type','text').attr('readonly',true);
 			});
@@ -71,7 +79,7 @@
 			
 		});
 	});
- 	$($('footer input')[0]).on('click', function(event){
+ 	/*$($('footer input')[0]).on('click', function(event){
  		event.preventDefault();
  		var quantity = parseFloat($('input#quantity').val());
  		var amount = parseFloat($($('span.total')[0]).text());
@@ -81,7 +89,7 @@
  			return;
  		}
  		$('form').submit();
- 	});
+ 	});*/
 
  });
 /*
