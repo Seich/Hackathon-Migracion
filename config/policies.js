@@ -23,6 +23,9 @@ module.exports.policies = {
   	create: 'flash',
   	'email_exists': 'flash',
   	'*': 'isAuthenticated'
+  },
+  dashboard:{
+  	'*': 'isAuthenticated'
   }
 
   /*
