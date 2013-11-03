@@ -32,9 +32,9 @@ module.exports = {
     	});
     },
     create: function(req, res, next){
-    	//console.log(req);
-        console.log("baka2");
-    	User.create(req.params.all(), function userCreated(err, user){
+        var user = req.params.all();
+        user.password_hash = MD5(user.password_hash);
+    	User.create(user, function userCreated(err, user){
     		if(err){
     			req.session.flash ={err:err}
 
@@ -53,14 +53,7 @@ module.exports = {
     		});
     	})
     },
-    beforeCreate: function (values, next) {
-        console.log("baka");
-        if(!values.password || values.password != values.password_hash_confirmation){
-            return next({err: ["Password doesn't match password confirmation"]})
-        }
-        values.password_hash = MD5(values.password);
-        next();
-    },
+    
 
 
   /**
@@ -71,6 +64,8 @@ module.exports = {
 
   
 };
+
+
 
 var MD5 = function (string) {
  

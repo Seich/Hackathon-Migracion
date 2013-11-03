@@ -15,7 +15,7 @@ $(document).ready(function(){
 			        type: "post"
 			    }
 		  	},
-		  	password: {
+		  	password_hash: {
 		  		required: true,
 		  		minlength: 6
 		  	},
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		  		required: true
 		  	},
 		  	password_hash_confirmation: {
-		  		equalTo: "#password",
+		  		equalTo: "#password_hash",
 		  		minlength: 6
 		  	}	
 		},
