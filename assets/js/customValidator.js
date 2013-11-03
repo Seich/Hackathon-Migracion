@@ -33,7 +33,7 @@ $(document).ready(function(){
 		    }
 		},
 		success: function(element) {
-			element.text('OK!').addClass('valid')
+			element.addClass('valid')
 		}
 	});
 
@@ -67,7 +67,7 @@ $(document).ready(function(){
 		    }
 		},
 		success: function(element) {
-			element.text('OK!').addClass('valid')
+			element.addClass('valid')
 		}
 	});
 });

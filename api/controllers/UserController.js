@@ -31,7 +31,7 @@ module.exports = {
     	});
     },
     'changePasswordValidation': function(req, res){
-        res.send(req.params["password_hash"].length >= 6);
+        res.send(req.param('password_hash').length >= 6);
     },
     create: function(req, res, next){
         var user = req.params.all();
@@ -52,8 +52,51 @@ module.exports = {
     	
     },
     update: function(req, res, next){
-        console.log(req.params.all());
-        res.redirect('/user/show');
+        if(req.param('password_hash').length > 5){
+            var user = req.params.all();
+            var passwordHash = require('password-hash');
+            var hashedPassword = passwordHash.generate(user.password_hash);
+            user.password_hash = hashedPassword;
+            
+            User.update({
+              emailAddress: req.session.User.emailAddress
+            },{
+              firstName: req.param('firstName'), 
+              lastName: req.param('lastName'), 
+              password_hash: user.password_hash,
+              birthDate: req.param('birthDate'),
+              phoneNumber: req.param('phoneNumber')
+            }, function(err, users) {
+              // Error handling
+              if(err){
+                req.session.flash ={err:err}
+                res.redirect('/user/edit');
+              } else {
+                req.session.User = users[0];
+                res.redirect('/user/show');
+              }
+            });
+        } else {
+            User.update({
+              emailAddress: req.session.User.emailAddress
+            },{
+              firstName: req.param('firstName'), 
+              lastName: req.param('lastName'), 
+              birthDate: req.param('birthDate'),
+              phoneNumber: req.param('phoneNumber')
+            }, function(err, users) {
+              // Error handling
+              if(err){
+                req.session.flash ={err:err}
+                res.redirect('/user/edit');
+              } else {
+                req.session.User = users[0];
+                res.redirect('/user/show');
+              }
+            });
+        }
+        
+        
     },
     'edit': function(req, res){
         User.findOne(req.session.User.id,function(err, user) {
