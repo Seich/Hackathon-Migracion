@@ -17,13 +17,11 @@
 					service.index = i;
 					$new_service_list.append(new EJS({url: '/views/new_remittance_service.ejs'}).render(service));
 				});
-
 				return false;
 			});
 
 			$('.new_services').on('click', 'li', function() {
 				var i = $(this).attr('data-id');
-				
 				services[i].index = i;
 				$cur_service_list.append(new EJS({url: '/views/current_remittance_service.ejs'}).render(services[i]));
 				$new_service_list.hide();
@@ -43,7 +41,7 @@
 				return false;
 			});
 
-			$('.new_service').on('click','li', function() {
+			$('.new_banks').on('click','li', function() {
 				var i = $(this).attr('data-id');
 				banks[i].index = i;
 				$cur_service_list.append(new EJS({url: '/views/current_remittance_bank.ejs'}).render(banks[i]));
