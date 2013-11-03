@@ -50,3 +50,16 @@
 		});
 	});
  });
+/*
+$(document).ready(function() {
+	$('form-reload').click(function() {
+		var amount = $('reload-amount').val();
+		$.post('/card/reload' , {amount: amount},
+			function() {
+				$('reload-amount').val('');
+			}).fail(function(res){
+				$('reload-amount').val('0');
+			});
+	});
+});
+	*/
