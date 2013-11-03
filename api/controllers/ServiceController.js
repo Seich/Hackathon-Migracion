@@ -20,7 +20,7 @@ module.exports = {
   _config: {},
 
   find_by_country: function(req, res) {
-  	Service.find(req.param('country')).exec(function(err, services){
+  	Service.find().where({ country: req.param('country') }).exec(function(err, services){
   		if (err) {
   			return res.send(err, 500);
   		}

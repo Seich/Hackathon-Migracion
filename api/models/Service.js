@@ -8,7 +8,7 @@
 
 module.exports = {
 	schema: true,
-	
+
 	attributes: {
 
 		company: {
@@ -21,6 +21,10 @@ module.exports = {
 		},
 
 		name: {
+			type: 'STRING'
+		},
+
+		logo: {
 			type: 'STRING'
 		}
 
