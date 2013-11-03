@@ -25,7 +25,7 @@
 				var $this = $(this);
 				var i = $this.attr('data-id');
 				
-				$cur_service_list.append(new EJS({url: '/views/new_remittance_service.ejs'}).render(services[i]));
+				$cur_service_list.append(new EJS({url: '/views/current_remittance_service.ejs'}).render(services[i]));
 				$new_service_list.hide();
 			});
 
