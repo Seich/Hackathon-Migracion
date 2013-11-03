@@ -29,12 +29,19 @@ module.exports = {
 				res.redirect('/dashboard');
 			});
 	 },
+	 destroy : function(req, res, next) {
+	 		Card.findOne(req.param('id')).done(function(err, card) {
+ 				card.destroy(function(err) {
+	 				res.redirect('/dashboard/load');
+  			});
+			});
+	 },
 
-	newcard: function(req, res){
+	'newcard': function(req, res){
 	 res.view('card/new',{});
 	},
 
-	reload: function(req, res){
+	'reload': function(req, res){
 		var am = parseFloat(req.param('amount')) + parseFloat(req.session.User.balance); 
 		User.update({
 			id: req.session.User.id
