@@ -1,43 +1,38 @@
 $(document).ready(function(){
 	$('.form-signup').validate({
-	rules: {
-		firstName: {
-  		type: 'string',
-  		maxLength: 40
-	  	},
-	  	lastName: {
-	  		type: 'string',
-	  		maxLength: 40
-	  	},
-	  	emailAddress: {
-	  		type: 'string',
-	      email:true,
-	  		required: true,
-	      unique: true
-	  	},
-	  	username: {
-	  		type: 'string',
-	  		required: true,
-	      unique: true
-	  	},
-	  	password_hash: {
-	  		type: 'string',
-	  		required: true,
-	  		minLength: 6
-	  	},
-	  	birthDate: {
-	  		type: 'date'
-	  	},
-	  	phoneNumber: {
-	  		type: 'string'
-	  	},
-	  	confirmation_password_hash: {
-	  		minLength: 6,
-	  		equalTo: "#password_hash"
-	  	}	
-	},
-	success: function(element) {
-		element.text('OK!').addClass('valid')
-	}
-});
+		rules: {
+			firstName: {
+				required: true
+		  	},
+		  	lastName: {
+		  		required: true
+		  	},
+		  	emailAddress: {
+		      	email:true,
+		  		required: true
+		  	},
+		  	username: {
+		  		required: true
+		  	},
+		  	password_hash: {
+		  		required: true,
+		  		minlength: 6
+		  	},
+		  	birthDate: {
+		  		required: true
+		  	},
+		  	password_hash_confirmation: {
+		  		equalTo: "#password_hash",
+		  		minlength: 6
+		  	}	
+		},
+		success: function(element) {
+			element.text('OK!').addClass('valid')
+		}
+	}, submitHandler: function(form) {
+    // some other code
+    // maybe disabling submit button
+    // then:
+    $(form).submit();
+  });
 });
