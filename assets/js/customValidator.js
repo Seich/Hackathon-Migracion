@@ -42,16 +42,28 @@ $(document).ready(function(){
 			firstName: {
 				required: true
 		  	},
+		  	emailAddress: {
+				required: true
+		  	},
 		  	lastName: {
 		  		required: true
 		  	},
 		  	birthDate: {
 		  		required: true
+		  	},
+		  	password_hash: {
+		  		remote: {
+			    	url: "/user/changePasswordValidation",
+			        type: "post"
+			    }
+		  	},
+		  	password_hash_confirmation: {
+		  		equalTo: "#password_hash"
 		  	}
 		},
 		messages: {
-		    emailAddress: {
-		      	remote: "Esta dirección de correo ya esta registrada."
+		    password_hash: {
+		      	remote: "La contraseña debe tener 6 caracteres como mínimo."
 		    }
 		},
 		success: function(element) {
