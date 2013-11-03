@@ -22,7 +22,7 @@
    * Action blueprints:
    *    `/dashboard/index`
    *    `/dashboard`
-   */
+   */ 
    index: function (req, res) {
 
     var pendingTransactions = [
@@ -54,7 +54,18 @@
             firstName: "Pedro",
             lastName: "Martínez"
         });
-},
+    },
+
+    load : function (req , res) {
+      Card.find().where({user_id: req.session.User.id }).exec(function(err, cards){
+      if (err) {
+        return res.send(err, 500);
+      }
+
+      return res.view(cards);
+      });
+      
+    },
 
 
   /**

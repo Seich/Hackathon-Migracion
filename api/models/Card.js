@@ -23,10 +23,6 @@ module.exports = {
   	postal_code: 'STRING',
   	phone_number: 'STRING'
   	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
   }
 
 };

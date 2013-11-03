@@ -44,15 +44,11 @@
         <ul>
           <!--<li><a href="/dashboard/settings">Configuración</a></li>-->
           <% if(session.authenticated){ %>
-            <li><a href="/user/show"><%- session.User.firstName %></a> | </li>
+            <li><a href="/user/show"><%- session.User.firstName %></a></li>
             <li><a href="/session/destroy">Cerrar Sesión</a></li>
           <%} else {%>
-            <form action="/session/create" method="POST" class="form-signin">
-              <h2 class="form-signin-heading">Please sign in...</h2>
-              <input type="text" placeholder="Email address" name="email">
-              <input type="password" placeholder="Password" name="password">
-              <input type="submit" value="Sign-in"/>
-            </form>
+            <li><a href="/session/new">Iniciar Sesion</a></li>
+            <li><a href="/user/new" class="btn btn-red">Registro</a></li>
           <%}%>
 
         </ul>
