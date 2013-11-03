@@ -26,6 +26,20 @@
 				$cur_service_list.append(new EJS({url: '/views/current_remittance_service.ejs'}).render(services[i]));
 				$new_service_list.hide();
 			});
+			$('.current_services').on('click', 'button', function(event){
+
+				event.preventDefault();
+				var quantity = Math.floor((Math.random()*10000)+1);
+				var $accoutInput = $($(this).parent('div:first').find('input:first')[0]);
+				//var $amountInput = $($(this).parent('div:first').find('input:last')[0]);
+				if($accoutInput.val().length < 1){
+					return;
+				}
+				$accoutInput.attr('readonly', true);
+				//$amountInput.attr('value', quantity).attr('type','text').attr('readonly',true);
+			});
+
+
 		});
 
 		$.getJSON('/bank/find_by_country', {
@@ -47,6 +61,8 @@
 				$cur_service_list.append(new EJS({url: '/views/current_remittance_bank.ejs'}).render(banks[i]));
 				$new_banks_list.hide();
 			});
+
+			
 		});
 	});
  });

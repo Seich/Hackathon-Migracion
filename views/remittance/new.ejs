@@ -1,5 +1,13 @@
 <h2>Enviar Remesa</h2>
 <form action="/remittance/create" method="POST" id="new_remittance">
+	<% if(flash && flash.err) { %>
+		<p>Los siguientes errores surgieron: </p>
+		<ul class="errors">
+			<% Object.keys(flash.err).forEach(function(error){%>
+				<li> <%= flash.err[error].message %></li>
+			<%})%>
+		</ul>
+	<% } %>
 	<label for="quantity">Cantidad</label>
 	<input type="text" id="quantity" name="quantity">
 
